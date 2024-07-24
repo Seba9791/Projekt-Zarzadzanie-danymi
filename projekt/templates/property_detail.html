@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<h1>{{ nieruchomosc.nazwa }}</h1>
+<p>{{ nieruchomosc.lokalizacja }}</p>
+<p>{{ nieruchomosc.cena_dzienna }} PLN</p>
+<p>{{ nieruchomosc.opis }}</p>
+<div class="property-gallery">
+    {% for zdjecie in nieruchomosc.zdjecia %}
+        <img src="{{ url_for('static', filename='uploads/' ~ zdjecie.filename) }}" alt="Zdjęcie {{ nieruchomosc.nazwa }}" style="margin-bottom: 10px;">
+    {% endfor %}
+</div>
+<a href="{{ url_for('rent_property', property_id=nieruchomosc.id) }}" class="btn btn-primary">Zarezerwuj</a>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Wynajem Nieruchomości{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Strona Główna</a></li>
+                <li><a href="{{ url_for('katalog') }}">Katalog Nieruchomości</a></li>
+                <li><a href="{{ url_for('opinie') }}">Opinie</a></li>
+                <li><a href="{{ url_for('o_nas') }}">O Nas</a></li>
+                <li><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+                {% if current_user.is_authenticated and current_user.is_admin %}
+                    <li><a href="{{ url_for('add') }}">Dodaj Nieruchomość</a></li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('user_panel') }}">Panel Użytkownika</a></li>
+                    <li class="logout"><a href="{{ url_for('logout') }}">Wyloguj się</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Zaloguj się</a></li>
+                    <li><a href="{{ url_for('register') }}">Zarejestruj się</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Wynajem Nieruchomości. Wszelkie prawa zastrzeżone.</p>
+        <div>
+            Numer telefonu: 123-456-789          Email: kontakt@wynajemnieruchomosci.pl
+        </div>
+        
+    </footer>
+</body>
+</html>
+

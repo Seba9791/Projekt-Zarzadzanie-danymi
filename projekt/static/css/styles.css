@@ -1,0 +1,281 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/tlo.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #ff0000;
+    margin: 0;
+    padding: 0;
+    font-weight: bold; 
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .alert, footer div {
+    font-weight: bold;
+    font-size: 1,5em;
+    color:red;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+footer div {
+    margin: 5px 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ea0e0e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul .logout {
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    color: #ff0303;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+ul.property-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.property-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffffc3;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+p,li{
+    color: #22a205;
+    font-weight: bold;
+    font-size: 1,5em;
+    text-shadow: 0.2em 0.2em 0.3em black;
+
+}
+table,td,th{
+    color: #22a205;
+    font-weight: bold;
+    font-size: 1,5em;
+    text-shadow: 0.2em 0.2em 0.3em black;
+    border: #333;
+}
+table, table * {border: 5px solid black}
+.property-content {
+    flex: 1;
+}
+
+.property-image {
+    margin-left: 20px;
+}
+
+.property-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #ff0000;
+    padding: 10px 0;
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Stylizacja dla gwiazdek */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    color: #bbb;
+    font-size: 30px;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+    color: #f2b600;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-rating {
+    display: flex;
+    direction: ltr;
+}
+
+.star-rating .fa-star {
+    color: #bbb;
+    font-size: 20px;
+}
+
+.star-rating .fa-star.checked {
+    color: #f2b600;
+}
+
+.property-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.property-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.property-image {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.average-rating {
+    display: flex;
+    align-items: center;
+}
+
+.opinion-rating {
+    display: flex;
+    align-items: center;
+}
+
+.opinion-rating .star-rating {
+    margin-right: 5px;
+}
+
+.delete-form {
+    display: inline-block;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 3px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

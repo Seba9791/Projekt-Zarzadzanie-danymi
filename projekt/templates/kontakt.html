@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Kontakt</h2>
+    <p>Firma: Wynajem Nieruchomości</p>
+    <p>Email: kontakt@wynajemnieruchomosci.pl</p>
+    <p>Telefon: +48 123 456 789</p>
+    
+    <h3>Formularz kontaktowy</h3>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="{{ url_for('kontakt') }}">
+        <div>
+            <label for="email">Twój Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="subject">Temat:</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div>
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Wyślij</button>
+    </form>
+{% endblock %}
